@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="股票助手.StockList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:股票助手"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid Background="Wheat">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="title_buy" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+               Background="Red"
+               Content="買進" Style="{StaticResource TitleStyle}"/>
+
+            <Label x:Name="title_sell" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"
+               Background="Green"
+               Content="賣出" Style="{StaticResource TitleStyle}"/>
+
+
+            <Label x:Name="title_buy_price" Grid.Row="1" Grid.Column="1"
+               Content="價格" Style="{StaticResource TitleStyle}"/>
+            <Label x:Name="title_buy_num" Grid.Row="1" Grid.Column="2"
+               Content="股數" Style="{StaticResource TitleStyle}"/>
+            <Label x:Name="title_sell_price" Grid.Row="1" Grid.Column="3"
+               Content="價格" Style="{StaticResource TitleStyle}"/>
+            <Label x:Name="title_sell_num" Grid.Row="1" Grid.Column="4"
+               Content="股數" Style="{StaticResource TitleStyle}"/>
+
+            <CheckBox x:Name="title_select" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
+                IsChecked="True"/>
+
+            <CheckBox x:Name="select_0" Grid.Row="2" Grid.Column="0"
+                Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
+                IsChecked="True"/>
+            <TextBox x:Name="data_00" Grid.Row="2" Grid.Column="1"
+                Style="{StaticResource TextBoxStyle_AutoSet}"/>
+            <TextBox x:Name="data_01" Grid.Row="2" Grid.Column="2"
+                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
+            <TextBox x:Name="data_02" Grid.Row="2" Grid.Column="3"
+                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
+            <TextBox x:Name="data_03" Grid.Row="2" Grid.Column="4"
+                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
+
+            
+            
+            
+            <DockPanel x:Name="total_buy_price" Grid.Column="1" Grid.Row="9">
+                <Label DockPanel.Dock="Right"
+                        Content="平均價格"/>
+                <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_price"
+                        Text="123.4"
+                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
+            </DockPanel>
+
+
+            <DockPanel x:Name="total_buy_num" Grid.Column="2" Grid.Row="9">
+                <Label DockPanel.Dock="Right"
+                        Content="總股數"/>
+                <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_num"
+                        Text="123.4"
+                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
+            </DockPanel>
+
+
+            <DockPanel x:Name="total_sell_price" Grid.Column="3" Grid.Row="9">
+                <Label DockPanel.Dock="Right"
+                        Content="平均價格"/>
+                <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_price"
+                        Text="123.4"
+                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
+            </DockPanel>
+
+
+            <DockPanel x:Name="total_sell_num" Grid.Column="4" Grid.Row="9">
+                <Label DockPanel.Dock="Right"
+                        Content="總股數"/>
+                <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_num"
+                        Text="123.4"
+                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
+            </DockPanel>
+            
+
+
+
+        </Grid>
+
+        <Grid>
+
+        </Grid>
+
+    </Grid>
+</UserControl>
