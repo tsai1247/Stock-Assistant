@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace 股票計算機
+namespace 股票助手
 {
     /// <summary>
     /// Interaction logic for App.xaml

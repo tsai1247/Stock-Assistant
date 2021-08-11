@@ -1,7 +1,7 @@
-﻿<Application x:Class="股票計算機.App"
+﻿<Application x:Class="股票助手.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:股票計算機"
+             xmlns:local="clr-namespace:股票助手"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

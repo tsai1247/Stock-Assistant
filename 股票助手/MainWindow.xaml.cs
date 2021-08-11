@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace 股票計算機
+namespace 股票助手
 {
     static class Constants
     {
@@ -34,6 +34,7 @@ namespace 股票計算機
             init();
         }
 
+        Button btn = new Button();
         private void init()
         {
             SellAllCheck();
@@ -41,7 +42,9 @@ namespace 股票計算機
             if (AutoCount == null) return;
             if ((bool)AutoCount.IsChecked)
                 Calculate();
+
         }
+
 
         private void Cal_Click(object sender, RoutedEventArgs e)
         {
