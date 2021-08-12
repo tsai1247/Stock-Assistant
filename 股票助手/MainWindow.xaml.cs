@@ -31,6 +31,12 @@ namespace 股票助手
         public MainWindow()
         {
             InitializeComponent();
+            init();
+        }
+
+        private void init()
+        {
+            stocklist.Content = new StockList();
         }
     }
 }
