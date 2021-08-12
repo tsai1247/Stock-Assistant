@@ -323,6 +323,40 @@ namespace 股票助手
             Calculate();
         }
 
-      
+        private void LoadData(object sender, RoutedEventArgs e)
+        {
+            string[] data = FileRW.ReadLineFile("SaveData.txt");
+            FileRW.AppendLineFile("Debug.txt", String.Format("{0}", data.Length));
+
+            bool titleSel = data[0] == "True";                  // for titleselect.IsChecked
+            bool[] seleData = new bool[data.Length - 3];        // for SelectData
+
+            string[,] inpData = new string[data.Length - 3, 4]; // for InputData
+            string[] title = new string[data.Length - 3];   // for NameList
+            string[] curData;
+            for (int i=1; i<data.Length-2; i++)
+            {
+                curData = data[i].Split(',');
+
+                FileRW.AppendLineFile("Debug.txt", String.Format("{0}", curData.Length));
+
+                seleData[i-1] = curData[0] == "True";
+
+                title[i - 1] = curData[1]; // bug
+                for (int j=1; j<5; j++)
+                {
+                    inpData[i - 1, j-1] = curData[j];
+                }
+
+            }
+
+            curData = data[data.Length - 2].Split(',');
+            bool fee = curData[0]=="True";                      // for cal_FEE
+            bool minfee = curData[1] == "True";                 // for cal_MinFEE
+            string tax = curData[2];                            // for cal_TAX
+
+
+            FileRW.AppendLineFile("Debug.txt", String.Format("{0} {1} {2} {3} {4} '{5}' {6}", titleSel, seleData[2], inpData[1, 3], inpData[2, 1], fee, tax, title[1]));
+        }
     }
 }
