@@ -14,107 +14,206 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="Wheat">
+        <DockPanel>
+            <Grid DockPanel.Dock="Bottom" Margin="0, 5, 0, 5">
 
-        <Grid Background="Wheat">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+                <Grid.ToolTip>
+                    <ToolTip Placement="MousePoint" >
+                        <TextBlock x:Name="tip_diff" Text=""/>
+                    </ToolTip>
+                </Grid.ToolTip>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition x:Name="LineCol" Width="148"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="16.5"/>
+                </Grid.ColumnDefinitions>
 
-            <Label x:Name="title_buy" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
-               Background="Red"
-               Content="買進" Style="{StaticResource TitleStyle}"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="LineRow" Height="41"/>
+                    <RowDefinition Height="41"/>
+                </Grid.RowDefinitions>
 
-            <Label x:Name="title_sell" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2"
-               Background="Green"
-               Content="賣出" Style="{StaticResource TitleStyle}"/>
-
-
-            <Label x:Name="title_buy_price" Grid.Row="1" Grid.Column="1"
-               Content="價格" Style="{StaticResource TitleStyle}"/>
-            <Label x:Name="title_buy_num" Grid.Row="1" Grid.Column="2"
-               Content="股數" Style="{StaticResource TitleStyle}"/>
-            <Label x:Name="title_sell_price" Grid.Row="1" Grid.Column="3"
-               Content="價格" Style="{StaticResource TitleStyle}"/>
-            <Label x:Name="title_sell_num" Grid.Row="1" Grid.Column="4"
-               Content="股數" Style="{StaticResource TitleStyle}"/>
-
-            <CheckBox x:Name="title_select" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
-                Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
-                IsChecked="True"/>
-
-            <CheckBox x:Name="select_0" Grid.Row="2" Grid.Column="0"
-                Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
-                IsChecked="True"/>
-            <TextBox x:Name="data_00" Grid.Row="2" Grid.Column="1"
-                Style="{StaticResource TextBoxStyle_AutoSet}"/>
-            <TextBox x:Name="data_01" Grid.Row="2" Grid.Column="2"
-                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
-            <TextBox x:Name="data_02" Grid.Row="2" Grid.Column="3"
-                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
-            <TextBox x:Name="data_03" Grid.Row="2" Grid.Column="4"
-                 Style="{StaticResource TextBoxStyle_AutoSet}"/>
-
-            
-            
-            
-            <DockPanel x:Name="total_buy_price" Grid.Column="1" Grid.Row="9">
-                <Label DockPanel.Dock="Right"
+                <DockPanel x:Name="total_buy_price" Grid.Column="2" Grid.Row="0">
+                    <Label DockPanel.Dock="Right"
                         Content="平均價格"/>
-                <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_price"
+                    <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_price"
                         Text="123.4"
-                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
-            </DockPanel>
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+                </DockPanel>
 
 
-            <DockPanel x:Name="total_buy_num" Grid.Column="2" Grid.Row="9">
-                <Label DockPanel.Dock="Right"
+                <DockPanel x:Name="total_buy_num" Grid.Column="3" Grid.Row="0">
+                    <Label DockPanel.Dock="Right"
                         Content="總股數"/>
-                <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_num"
+                    <TextBlock DockPanel.Dock="Left" x:Name="Aver_buy_num"
                         Text="123.4"
-                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
-            </DockPanel>
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+                </DockPanel>
 
 
-            <DockPanel x:Name="total_sell_price" Grid.Column="3" Grid.Row="9">
-                <Label DockPanel.Dock="Right"
+                <DockPanel x:Name="total_sell_price" Grid.Column="4" Grid.Row="0">
+                    <Label DockPanel.Dock="Right"
                         Content="平均價格"/>
-                <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_price"
+                    <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_price"
                         Text="123.4"
-                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
-            </DockPanel>
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+                </DockPanel>
 
 
-            <DockPanel x:Name="total_sell_num" Grid.Column="4" Grid.Row="9">
-                <Label DockPanel.Dock="Right"
+                <DockPanel x:Name="total_sell_num" Grid.Column="5" Grid.Row="0">
+                    <Label DockPanel.Dock="Right"
                         Content="總股數"/>
-                <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_num"
+                    <TextBlock DockPanel.Dock="Left" x:Name="Aver_sell_num"
                         Text="123.4"
-                           Style="{StaticResource TextBlockStyle_AutoSet}"/>
-            </DockPanel>
-            
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+                </DockPanel>
+
+                <Line  Grid.Column="1" Grid.Row="0"
+                       X1="0" Y1="0" X2="148" Y2="41" Stroke="Gray" StrokeThickness="2"/>
+                <Line  Grid.Column="1" Grid.Row="1"
+                       X1="0" Y1="0" X2="148" Y2="41" Stroke="Gray" StrokeThickness="2"/>
+                <Line  Grid.Column="1" Grid.Row="0"
+                       X1="148" Y1="0" X2="0" Y2="41" Stroke="Gray" StrokeThickness="2"/>
+                <Line  Grid.Column="1" Grid.Row="1"
+                       X1="148" Y1="0" X2="0" Y2="41" Stroke="Gray" StrokeThickness="2"/>
+
+                <DockPanel x:Name="total_buy" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"
+                           Background ="#FF5151">
+                    <Label DockPanel.Dock="Right"
+                        Content="總支出"/>
+                    <TextBlock DockPanel.Dock="Left" x:Name="Total_buy_val"
+                        Text="123.4"
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+
+                </DockPanel>
+
+
+                <DockPanel x:Name="total_sell" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2"
+                           Background="LightGreen">
+                    <Label DockPanel.Dock="Right"
+                        Content="總收入"/>
+                    <TextBlock DockPanel.Dock="Left" x:Name="Total_sell_val"
+                        Text="123.4"
+                            Style="{StaticResource TextBlockStyle_AutoSet_24}"/>
+                </DockPanel>
+
+
+            </Grid>
+
+            <WrapPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                <CheckBox x:Name="cal_FEE" Content="包含手續費" IsChecked="True"
+                    Style="{StaticResource CheckBoxStyle}" Click="select_Click"/>
+                <CheckBox x:Name="cal_TAX" Content="包含證交稅" IsChecked="True"
+                    Style="{StaticResource CheckBoxStyle}" Click="select_Click"/>
+                <Label Content="最低手續費：" Style="{StaticResource ScriptStyle_20}"/>
+                <TextBox x:Name="cal_MinFEE" Text="1" Style="{StaticResource TextBoxStyle_AutoSet_24}"
+                    Height="40" Width="45" TextChanged="InputChange"/>
+                
+            </WrapPanel>
+
+            <Grid x:Name="grid_title" DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="148"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="16.5"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="title_name" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                    Content="名稱" Style="{StaticResource TitleStyle}"/>
+
+
+                <Label x:Name="title_buy" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
+                    Background="Red"
+                    Content="買進" Style="{StaticResource TitleStyle}"/>
+
+                <Label x:Name="title_sell" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"
+                    Background="Green"
+                    Content="賣出" Style="{StaticResource TitleStyle}"/>
+
+
+                <Label x:Name="title_buy_price" Grid.Row="1" Grid.Column="2"
+                    Content="價格" Style="{StaticResource TitleStyle}"/>
+                <Label x:Name="title_buy_num" Grid.Row="1" Grid.Column="3"
+                    Content="股數" Style="{StaticResource TitleStyle}"/>
+                <Label x:Name="title_sell_price" Grid.Row="1" Grid.Column="4"
+                    Content="價格" Style="{StaticResource TitleStyle}"/>
+                <Label x:Name="title_sell_num" Grid.Row="1" Grid.Column="5"
+                    Content="股數" Style="{StaticResource TitleStyle}"/>
+
+                <CheckBox x:Name="title_select" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                    Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    IsChecked="True" Click="title_select_Click"/>
+
+
+            </Grid>
+
+            <ScrollViewer DockPanel.Dock="Top" Margin="0, 5, 0, 5">
+                <Grid x:Name="grid_stocklist">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45" MinHeight="45"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="148"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox x:Name="select_0" Grid.Row="0" Grid.Column="0"
+                    Content="" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    IsChecked="True" Click="select_Click">
+                        <CheckBox.ToolTip>
+
+                            <ToolTip Placement="MousePoint" >
+                                <TextBlock x:Name="tip_0" Text=""/>
+                            </ToolTip>
+
+                        </CheckBox.ToolTip>
+                    </CheckBox>
+
+                    <TextBox x:Name="data_name0" Grid.Row="0" Grid.Column="1"
+                    Style="{StaticResource TextBoxStyle_AutoSet_30}"/>
+
+                    <TextBox x:Name="data_00" Grid.Row="0" Grid.Column="2"
+                    Style="{StaticResource TextBoxStyle_AutoSet_30}"
+                    TextChanged="InputChange"/>
+                    <TextBox x:Name="data_01" Grid.Row="0" Grid.Column="3"
+                    Style="{StaticResource TextBoxStyle_AutoSet_30}"
+                    TextChanged="InputChange"/>
+                    <TextBox x:Name="data_02" Grid.Row="0" Grid.Column="4"
+                    Style="{StaticResource TextBoxStyle_AutoSet_30}"
+                    TextChanged="InputChange"/>
+                    <TextBox x:Name="data_03" Grid.Row="0" Grid.Column="5"
+                    Style="{StaticResource TextBoxStyle_AutoSet_30}"
+                    TextChanged="InputChange"/>
+
+                </Grid>
+            </ScrollViewer>
 
 
 
-        </Grid>
 
+
+
+        </DockPanel>
         <Grid>
 
         </Grid>
