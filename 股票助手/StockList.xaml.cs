@@ -219,6 +219,8 @@ namespace 股票助手
             grid_stocklist.Children.Remove(NameList[curIndex] as TextBox);
             NameList.RemoveAt(curIndex);
 
+            TipData.RemoveAt(curIndex);
+
         }
 
         private void AddRow()
