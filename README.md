@@ -9,11 +9,14 @@ Windows 10 version 1803, or later.
 * Just a simple calculator now.
 * All upgrades will be in future versions.
 
-## Install steps:
+## Install steps(user `Stock Calculator v0.2-beta` for example):
 * Like all the other UWPs file.
-1. Unzip "Stock Calculator v0.1-beta.zip"
-2. Run "Stock Calculator_0.1.0.0_AnyCPU.cer".  Import the certificate at `Local Computer: Trusted People`
-3. Run "Stock Calculator_0.1.0.0_AnyCPU.appxbundle" and install it.
+1. Unzip [Stock Calculator v0.2-beta.zip](https://github.com/tsai1247/Stock-Assistant/releases/download/v0.2-beta/Stock.Assistant.v0.2-beta.zip).
+2. Run "Stock Calculator_0.2.0.0_AnyCPU.cer".  Import the certificate at `Local Computer: Trusted People`
+3. Run "Stock Calculator_0.2.0.0_AnyCPU.appxbundle" and install it.
+
+* Download older version? See [Releases](https://github.com/tsai1247/Stock-Assistant/releases). 
+
 
 ## How to use
 ![](https://i.imgur.com/Tdf5Ojd.png)
